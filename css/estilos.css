@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,400;1,500&display=swap');
+
+:root{
+    --padding-container: 100px 0;
+    --color-title: #001A49;
+}
+
+body{
+    font-family: 'Helvetica Neue', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8003d;
+}
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: var(--padding-container);
+}
+
+.header{
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 800px;
+    position: relative;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    color: white;
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.header::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../images/wallpaper2.jpg');
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
+    z-index: -1;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.nav{
+    --padding-container:0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.nav__title{
+    font-weight: 300;
+    position: relative;
+}
+
+@keyframes wave {
+    0%, 100% {
+      clip-path: polygon(
+        0% 47%,
+        10% 48%,
+        33% 54%,
+        54% 60%,
+        70% 61%,
+        84% 59%,
+        100% 52%,
+        100% 100%,
+        0% 100%
+      );
+    }
+  
+    50% {
+      clip-path: polygon(0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+      );
+    }
+}
+
+.nav__inicio{
+    margin-left: auto;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 2em;
+}
+
+.nav__items{
+    list-style: none;
+    z-index: 1;
+}
+
+.nav__link{
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    z-index: 1;
+}
+
+.nav__link:hover{
+    color: #FF275B;
+}
+
+.header__section{
+    max-width: 800px;
+    --padding-container: 0;
+    display: grid;
+    grid-auto-rows: max-content;
+    align-content: center;
+    gap: 1em;
+    padding-bottom: 100px;
+    text-align: center;
+    animation: fade-in 1s ease-out;
+    animation: slide-up 0.8s ease-out forwards;
+    z-index: 1;
+}
+
+.header__content {
+    padding-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.barra__escritura{
+    width: 3px;
+    height: 50px;
+    margin-left: 5px;
+    background-color: #181818;
+    transform: rotateZ(10deg);
+    animation: barra-animacion 1s ease infinite;
+}
+
+@keyframes barra-animacion {
+    50% {
+        background-color: white;
+    }
+}
+
+.header__title {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 3rem;
+    opacity: 0;
+    animation: slide-up 0.8s ease-out forwards; 
+}
+
+.header__description {
+    height: 100px;
+    margin-bottom: 20px;
+    opacity: 0; 
+    animation: slide-up 0.8s ease-out forwards; 
+}
+
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.header__button {
+    display: inline-block;
+    background-color: rgba(255, 0, 0, 0.5);
+    justify-self: center;
+    color: white;
+    text-decoration: none;
+    padding: 13px 30px;
+    border-radius: 32px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.header__button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f8003e;
+    animation: wave 3s ease-in-out infinite;
+    z-index: -1;
+}
+
+.header__button:hover::before {
+    background-color: #cd0033;
+}
+
+.header__button:active{
+    transform: scale(0.9);
+    transition: transform 0.1 ease;
+}

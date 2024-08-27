@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="shortcut icon" href="./images/card.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+
+    <header class="header">
+
+        <nav class="nav container">
+            <div class="nav__logo">
+                <h2 class="nav__title">Nihil novum sub sole</h2>
+            </div>
+
+            <ul class="nav__inicio nav__inicio--menu">
+                <li class="nav__items">
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="nav__link">Formulario</a>
+                </li>
+                <li class="nav__items">
+                    <a href="index.html" class="nav__link">Inicio</a>
+                </li>
+            </ul>
+        </nav>
+
+        <section class="header__section container">
+        <div class="header__content">
+            <div class="header__title"></div>
+            <div class="barra__escritura"></div>
+        </div>
+            <p class="header__description">¿Qué es la libertad? No temer a los hombres, ni a los 
+                dioses; no desear nada deshonesto, ni excesivo; tener el completo señorío de sí mismo.</p>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="header__button">Per aspera ad astra</a>
+        </section>
+    </header>
+
+<script src="./js/animation.js"></script>
+<script src="./js/confetti.js"></script>
+
+    <!-- Confetti  JS-->
+    <script>
+
+        // start
+
+        const start = () => {
+            setTimeout(function() {
+                confetti.start()
+            }, 1000); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
+        };
+
+        start();
+    </script>
+    
+</body>
+</html>
